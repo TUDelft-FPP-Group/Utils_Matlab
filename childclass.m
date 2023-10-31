@@ -1,0 +1,9 @@
+function childClassName = childclass(obj)
+% Returns the name of the lowest level class, ignoring the names of
+% packages and superclasess
+  
+childClassName = string(...
+      extractAfter(...
+        class(obj),...
+        asManyOfPattern(wildcardPattern + ".")));
+end
